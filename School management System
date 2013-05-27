@@ -1,0 +1,171 @@
+package management;
+
+import javax.swing.JOptionPane;
+
+public class person {
+
+  	//attributes
+    
+		private String name;
+		private String address;
+		private String pnumb;
+
+		
+		//default constructor
+    
+		person()
+		{
+			this.name="";
+			this.address="";
+			this.pnumb="";
+			
+		}
+		
+		//PARAMETERISED CONSTRUCTOR
+    
+		person(String name,String address,String pnumb)
+		{
+			this.name=name;
+			this.address=address;
+			this.pnumb=pnumb;
+			
+		}
+
+		//getters
+    
+		public String getName() {
+			return name;
+		}
+		public String getAddress() {
+			return address;
+		}
+		public String getPnumb() {
+			return pnumb;
+		}
+		
+		
+		//setter
+    
+		public void setName(String name) {
+			this.name = name;
+		}
+		public void setAddress(String address) {
+			this.address = address;
+		}
+		public void setPnumb(String pnumb) {
+			this.pnumb = pnumb;
+		}
+		
+		public void print()
+		{
+			JOptionPane.showMessageDialog(null,"Name ==>"+name+"\nAddress ==>"+address+"\nPhone number ==>"+pnumb);
+		}
+		
+	}
+
+
+//class student
+
+package management;
+
+import javax.swing.JOptionPane;
+
+public class student extends person{
+
+  private String id;
+
+	//default constructor
+	student(){
+		this.id="";
+	}
+	
+	//Parameterized constructor
+	student(String name,String address,String pnumb,String id)
+	{
+		super(name,address,pnumb);
+		this.id=id;
+	}
+
+	//getter
+	public String getId() {
+		return id;
+	}
+
+	//setter
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public void print()
+	{
+		super.print();
+		JOptionPane.showMessageDialog(null,"Id ==>"+id);
+	}
+	
+}
+
+
+//class teacher
+
+package management;
+
+import javax.swing.JOptionPane;
+
+public class teacher extends person{
+  
+	private String qualif;
+	
+//default constructor
+	teacher(){
+		this.qualif="";
+	}
+	
+	//Parameterized constructor
+	teacher(String name,String address,String pnumb,String qualif){
+		super(name,address,pnumb);
+		this.qualif=qualif;
+	}
+
+	//getter
+	public String getQualif() {
+		return qualif;
+	}
+
+	//setter
+	public void setQualif(String qualif) {
+		this.qualif = qualif;
+	}
+	
+	public void print(){
+		super.print();
+		JOptionPane.showMessageDialog(null, "Qualification ==>"+qualif);
+	}
+}
+
+
+//main
+
+package management;
+
+
+public class main {
+
+  public static void main(String []args){
+	student s=new student();
+	s.setName("Loveeza");
+	s.setId("077");
+	s.setAddress("Lahore");
+	s.setPnumb("0480932432");
+	s.print();
+	
+	teacher t=new teacher();
+	t.setName("Loveeza");
+	t.setQualif("BSSE");
+	t.setAddress("Lahore");
+	t.setPnumb("0480932432");
+	t.print();
+}
+}
+
+
+
